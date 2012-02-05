@@ -114,12 +114,25 @@ body {
 	background: -o-linear-gradient(top, #F2EDED, #8F8E91);
 }
 </style>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28934090-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 </head>
 <body>
 <header>
 <h1>code show</h1>
 <p>Coming soon the dashboard to show you what is going on in your codebases</p>
-<p>Deveveloped by Ben Bennett and @sdh100shaun </p>
+<p>Deveveloped by <a href="http://profiles.google.com/synaptology">Ben Bennett</a> and <a href="http://twitter.com/sdh100shaun">@sdh100shaun</a> </p>
 </header>
 </body>
 </html>
