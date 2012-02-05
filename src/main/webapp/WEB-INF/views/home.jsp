@@ -119,7 +119,7 @@ body {
 <header>
 <h1>code show</h1>
 <p>Coming soon the dashboard to show you what is going on in your codebases</p>
-<p>Deveveloped by @mrbenn and @sdh100shaun </p>
+<p>Deveveloped by Ben Bennett and @sdh100shaun </p>
 </header>
 </body>
 </html>
