@@ -132,7 +132,7 @@ body {
 <header>
 <h1>code show</h1>
 <p>Coming soon the dashboard to show you what is going on in your codebases</p>
-<p>Deveveloped by <a href="http://profiles.google.com/synaptology">Ben Bennett</a> and <a href="http://twitter.com/sdh100shaun">@sdh100shaun</a> </p>
+<p>Developed by <a href="http://profiles.google.com/synaptology">Ben Bennett</a> and <a href="http://twitter.com/sdh100shaun">@sdh100shaun</a> </p>
 </header>
 </body>
 </html>
