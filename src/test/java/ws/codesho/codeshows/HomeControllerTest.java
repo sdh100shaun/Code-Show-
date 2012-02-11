@@ -14,9 +14,9 @@ import org.springframework.test.context.junit4.*;
 
 
 
-
+@ContextConfiguration()
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration
+
 
 
 public class HomeControllerTest {
