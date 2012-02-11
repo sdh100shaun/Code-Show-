@@ -121,6 +121,13 @@
 			<artifactId>spring-test</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>   
+		
+		<!--  Daily digest Mailchimp dependancy -->
+		<dependency>
+		    <groupId>net.mailjimp</groupId>
+		    <artifactId>mailjimp-core</artifactId>
+		    <version>0.2</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
