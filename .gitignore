@@ -2,4 +2,4 @@
 .settings
 .classpath
 .springbeans
-
+target/*
