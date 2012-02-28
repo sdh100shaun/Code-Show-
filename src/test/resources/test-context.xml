@@ -10,6 +10,6 @@
     <!--can't see a mailjimp-spring-config.xml anywhere-->
 	<!--<import resource="classpath:mailjimp-spring-config.xml" />-->
 	<!--<bean id="dailyDigest" class="ws.codesho.codeshows.models.DailyDigest" />-->
-	<context:component-scan base-package="ws.codesho.codeshows"/>
-	
+	<!--<context:component-scan base-package="ws.codesho.codeshows"/>-->
+
 </beans>

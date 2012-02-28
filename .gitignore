@@ -3,3 +3,7 @@
 .classpath
 .springbeans
 target/*
+.ipr
+.iws
+.iml
+
