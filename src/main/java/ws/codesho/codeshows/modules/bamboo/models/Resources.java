@@ -1,7 +1,6 @@
 package ws.codesho.codeshows.modules.bamboo.models;
 
 import javax.xml.bind.annotation.*;
-import javax.xml.transform.Result;
 import java.util.List;
 
 @XmlRootElement(name="resources/resources")
@@ -10,14 +9,13 @@ public class Resources {
 
     @XmlAttribute
     private Integer size;
-    @XmlAttribute()
-    private Integer maxSize;
-    @XmlAttribute
+    @XmlAttribute(name="max-result")
+    private Integer maxResult;
+    @XmlAttribute(name="start-index")
     private Integer startIndex;
-    /*
-    @XmlValue
-    private List<Resource> resourceList;
-    */
+    @XmlElement(name="resource")
+    public List<Resource> resourceList;
+
     public Integer getSize() {
         return size;
     }
@@ -26,12 +24,12 @@ public class Resources {
         this.size = size;
     }
 
-    public Integer getMaxSize() {
-        return maxSize;
+    public Integer getMaxResult() {
+        return maxResult;
     }
 
-    public void setMaxSize(Integer maxSize) {
-        this.maxSize = maxSize;
+    public void setMaxResult(Integer maxResult) {
+        this.maxResult = maxResult;
     }
 
     public Integer getStartIndex() {
@@ -41,12 +39,12 @@ public class Resources {
     public void setStartIndex(Integer startIndex) {
         this.startIndex = startIndex;
     }
-    /*
+
     public List<Resource> getResourceList() {
         return resourceList;
     }
 
     public void setResourceList(List<Resource> resourceList) {
         this.resourceList = resourceList;
-    } */
+    }
 }
