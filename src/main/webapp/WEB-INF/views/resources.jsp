@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ page session="false" %>
 <!DOCTYPE html>
-<html id="linearBg2">
+<html>
 <head>
     <title>Codeshows</title>
     <script type="text/javascript">

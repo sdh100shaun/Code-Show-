@@ -135,6 +135,14 @@
             <artifactId>mailjimp-core</artifactId>
             <version>0.2</version>
         </dependency>
+
+        <!-- Jackson dependencies for Json -->
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.6.4</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
