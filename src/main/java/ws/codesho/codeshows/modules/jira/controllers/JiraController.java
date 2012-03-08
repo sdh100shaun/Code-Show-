@@ -23,14 +23,24 @@ public class JiraController {
     @RequestMapping(value = "/jira", method = RequestMethod.GET)
     public ModelAndView jira(ModelAndView modelAndView) {
 
-        modelAndView.setViewName("project");
+        modelAndView.setViewName("projects");
 
         jiraModel.getProjectsFromWebService();
-        Project project = jiraModel.getProjects();
-        modelAndView.addObject("projects", project);
-        //bambooModel.getResourcesFromWebService();
-        //ResourcesRoot resources = bambooModel.getResources();
-        //modelAndView.addObject("resources", resources);
+        Projects projects = jiraModel.getProjects();
+        modelAndView.addObject("projects", projects);
+
+        return modelAndView;
+    }
+
+    //this is obviously a bad idea to hard-code, just a bit of testing
+    @RequestMapping(value = "/jira/amenities", method = RequestMethod.GET)
+    public ModelAndView amenities(ModelAndView modelAndView) {
+
+        modelAndView.setViewName("project");
+
+        jiraModel.getAmenitiesFromWebSerice();
+        Project project = jiraModel.getProject();
+        modelAndView.addObject("project", project);
 
         return modelAndView;
     }

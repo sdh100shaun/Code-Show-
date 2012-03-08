@@ -4,6 +4,6 @@
 <!DOCTYPE html>
 <html>
 <body>
-<c:out value="${projects.key}"/>
+<c:out value="${project.key}"/>
 </body>
 </html>

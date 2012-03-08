@@ -14,13 +14,24 @@ public class JiraModel extends RestTemplate {
 
     @Value("${jira.projectWebServiceUrl}")
     private String projectWebServiceUrl;
+    @Value("${jira.projectAmenitiesWebServiceUrl}")
+    private String amenitiesWebServiceUrl;
+    private Projects projects;
     private Project project;
 
     public void getProjectsFromWebService() {
-        project = super.getForObject(projectWebServiceUrl, Project.class);
+        projects = super.getForObject(projectWebServiceUrl, Projects.class);
     }
 
-    public Project getProjects() {
+    public Projects getProjects() {
+        return projects;
+    }
+
+    public void getAmenitiesFromWebSerice() {
+        project = super.getForObject(amenitiesWebServiceUrl, Project.class);
+    }
+
+    public Project getProject() {
         return project;
     }
 
