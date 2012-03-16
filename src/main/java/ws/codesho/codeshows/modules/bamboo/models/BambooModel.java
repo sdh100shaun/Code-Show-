@@ -1,12 +1,14 @@
 package ws.codesho.codeshows.modules.bamboo.models;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.client.RestOperations;
 import org.springframework.web.client.RestTemplate;
 
 
 @Repository
-public class BambooModel extends RestTemplate {
+public class BambooModel {
 
     @Value("${bamboo.infoWebServiceUrl}")
     private String infoWebServiceUrl;
@@ -16,9 +18,12 @@ public class BambooModel extends RestTemplate {
     private String latestWebServiceUrl;
     private ResourcesRoot resources;
 
+    @Autowired
+    private RestOperations restTemplate;
+
 
     public void getResourcesFromWebService() {
-        resources = super.getForObject(this.latestWebServiceUrl, ResourcesRoot.class);
+        resources = restTemplate.getForObject(this.latestWebServiceUrl, ResourcesRoot.class);
     }
 
     public ResourcesRoot getResources() {
@@ -26,7 +31,7 @@ public class BambooModel extends RestTemplate {
     }
 
     public void getInfoFromWebService() {
-        info = super.getForObject(this.infoWebServiceUrl, Info.class);
+        info = restTemplate.getForObject(this.infoWebServiceUrl, Info.class);
     }
 
     public Info getInfo() {

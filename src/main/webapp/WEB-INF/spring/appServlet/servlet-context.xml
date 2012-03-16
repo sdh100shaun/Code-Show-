@@ -23,8 +23,8 @@
 
     <context:component-scan base-package="ws.codesho.codeshows"/>
 
-    <context:property-placeholder location="classpath:codeshow.properties"/>
-    
-    
+    <context:property-placeholder location="classpath:codeshow.password.properties,classpath:codeshow.properties"/>
+
+    <beans:bean id="restTemplate" class="org.springframework.web.client.RestTemplate" />
 
 </beans:beans>
