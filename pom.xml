@@ -34,11 +34,21 @@
             <version>${org.springframework-version}</version>
         </dependency>
 
-        <!-- AspectJ -->
+        <!-- AspectJ (CGLib required for proxying classes that do not implement interfaces)-->
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>
             <version>${org.aspectj-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${org.aspectj-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>2.2</version>
         </dependency>
 
         <!-- Logging -->

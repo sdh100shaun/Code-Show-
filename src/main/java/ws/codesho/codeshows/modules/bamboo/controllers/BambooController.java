@@ -18,6 +18,8 @@ public class BambooController {
     private BambooModel bambooModel;
 
 
+    public BambooController() {}
+
     @Autowired
     public BambooController(BambooModel bambooModel) {
         this.bambooModel = bambooModel;

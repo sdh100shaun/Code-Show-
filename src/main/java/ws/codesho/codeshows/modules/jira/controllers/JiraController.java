@@ -15,6 +15,10 @@ public class JiraController {
 
     private JiraModel jiraModel;
 
+
+    public JiraController() {
+    }
+
     @Autowired
     public JiraController(JiraModel jiraModel) {
         this.jiraModel = jiraModel;
