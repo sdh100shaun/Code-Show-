@@ -9,22 +9,18 @@ import ws.codesho.codeshows.modules.bamboo.models.BambooModel;
 import ws.codesho.codeshows.modules.bamboo.models.Info;
 import ws.codesho.codeshows.modules.bamboo.models.ResourcesRoot;
 
-/**
- * Handles requests for the application home page.
- */
 @Controller
 public class BambooController {
 
     private BambooModel bambooModel;
 
-
+    //empty constructor otherwise CGLib proxying borks
     public BambooController() {}
 
     @Autowired
     public BambooController(BambooModel bambooModel) {
         this.bambooModel = bambooModel;
     }
-
 
     @RequestMapping(value = "/bamboo", method = RequestMethod.GET)
     public ModelAndView bamboo(ModelAndView modelAndView) {

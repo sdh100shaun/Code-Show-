@@ -2,10 +2,11 @@ package ws.codesho.codeshows.modules.jira.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import ws.codesho.codeshows.modules.bamboo.models.ResourcesRoot;
+import javax.servlet.http.HttpServletRequest;
 import ws.codesho.codeshows.modules.jira.models.JiraModel;
 import ws.codesho.codeshows.modules.jira.models.Project;
 import ws.codesho.codeshows.modules.jira.models.Projects;
@@ -24,25 +25,25 @@ public class JiraController {
         this.jiraModel = jiraModel;
     }
 
-    @RequestMapping(value = "/jira", method = RequestMethod.GET)
-    public ModelAndView jira(ModelAndView modelAndView) {
+    @RequestMapping(value = "/jira/project", method = RequestMethod.GET)
+    public ModelAndView jira(HttpServletRequest request, ModelAndView modelAndView) {
 
         modelAndView.setViewName("projects");
 
         jiraModel.getProjectsFromWebService();
         Projects projects = jiraModel.getProjects();
         modelAndView.addObject("projects", projects);
+        modelAndView.addObject("url", request.getRequestURL());
 
         return modelAndView;
     }
 
-    //this is obviously a bad idea to hard-code, just a bit of testing
-    @RequestMapping(value = "/jira/amenities", method = RequestMethod.GET)
-    public ModelAndView amenities(ModelAndView modelAndView) {
+    @RequestMapping(value = "/jira/project/{projectKey}", method = RequestMethod.GET)
+    public ModelAndView amenities(@PathVariable("projectKey") String projectKey, HttpServletRequest request, ModelAndView modelAndView) {
 
         modelAndView.setViewName("project");
 
-        jiraModel.getAmenitiesFromWebSerice();
+        jiraModel.getProjectFromWebSerice(request.getRequestURL(), projectKey);
         Project project = jiraModel.getProject();
         modelAndView.addObject("project", project);
 

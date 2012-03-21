@@ -5,6 +5,10 @@
 <html>
 <body>
 <p>Projects</p>
+
+<p>URI = ${uri}</p>
+<p>URL = ${url}</p>
+
 <table cellpadding="3" cellspacing="0" border="0" summary="Resource Objects">
     <tr>
         <th>Self</th>
@@ -13,7 +17,8 @@
     </tr>
     <c:forEach var="project" items="${projects}">
         <tr>
-            <td>${project.self}</td>
+            <td><a href="${url}${project.key}">${url}${project.key}</a></td>
+            <!--<td>${project.self}</td>   -->
             <td>${project.key}</td>
             <td>${project.name}</td>
         </tr>

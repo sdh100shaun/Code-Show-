@@ -10,7 +10,18 @@ public class Project {
 
     private String self;
     private String key;
+    private String description;
+    private Lead lead;
+
     private String name;
+
+    public String getSelf() {
+        return self;
+    }
+
+    public void setSelf(String self) {
+        this.self = self;
+    }
 
     public String getKey() {
         return key;
@@ -20,12 +31,20 @@ public class Project {
         this.key = key;
     }
 
-    public String getSelf() {
-        return self;
+    public String getDescription() {
+        return description;
     }
 
-    public void setSelf(String self) {
-        this.self = self;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Lead getLead() {
+        return lead;
+    }
+
+    public void setLead(Lead lead) {
+        this.lead = lead;
     }
 
     public String getName() {

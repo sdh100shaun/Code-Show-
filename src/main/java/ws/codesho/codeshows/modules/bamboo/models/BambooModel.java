@@ -18,9 +18,13 @@ public class BambooModel {
     private String latestWebServiceUrl;
     private ResourcesRoot resources;
 
+
     @Autowired
     private RestOperations restTemplate;
 
+    public void setRestTemplate(RestOperations restTemplate) {
+        this.restTemplate = restTemplate;
+    }
 
     public void getResourcesFromWebService() {
         resources = restTemplate.getForObject(this.latestWebServiceUrl, ResourcesRoot.class);

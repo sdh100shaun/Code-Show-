@@ -14,16 +14,18 @@ import java.io.IOException;
 @Repository
 public class JiraModel {
 
+    @Value("${jira.restApiUrl}")
+    private String jiraRestApiUrl;
+    @Value("${jira.restApiCurrentVersion}")
+    private String jiraRestApiCurrentVersion;
+    @Value("${jira.authenticationQueryString}")
+    private String jiraAuthenticationQueryString;
     @Value("${jira.projectWebServiceUrl}")
     private String projectWebServiceUrl;
-    @Value("${jira.projectAmenitiesWebServiceUrl}")
-    private String amenitiesWebServiceUrl;
-
-    private Projects projects;
-    private Project project;
-
     @Autowired
     private RestOperations restTemplate;
+    private Projects projects;
+    private Project project;
 
     public void getProjectsFromWebService() {
         projects = restTemplate.getForObject(projectWebServiceUrl, Projects.class);
@@ -33,8 +35,9 @@ public class JiraModel {
         return projects;
     }
 
-    public void getAmenitiesFromWebSerice() {
-        project = restTemplate.getForObject(amenitiesWebServiceUrl, Project.class);
+    public void getProjectFromWebSerice(StringBuffer url, String projectKey) {
+        String requestUrl = jiraRestApiUrl+jiraRestApiCurrentVersion+"/project/"+projectKey+"?"+jiraAuthenticationQueryString;
+        project = restTemplate.getForObject(requestUrl, Project.class);
     }
 
     public Project getProject() {
